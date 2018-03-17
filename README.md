@@ -13,16 +13,15 @@ Usage:
 package main
 
 import (
-  "log"
-  "github.com/laMetricNotification"
+    "log"
+    "github.com/laMetricNotification"
 )
 
 func main() {
-  apikey := "YOUR_DEVICE_API_KEY"
-  ip := "192.168.1.05"
-  myMessage := "Hello World"
-  
-  if err := lametricnotification.SendSimpleNotification(apikey, ip, myMessage); err != nil {
+    apikey := "YOUR_DEVICE_API_KEY"
+    ip := "192.168.1.05"
+    myMessage := "Hello World"
+    if err := lametricnotification.SendSimpleNotification(apikey, ip, myMessage); err != nil {
 		log.Println("Error sending Notification:", err)
   }
 }
@@ -32,28 +31,26 @@ func main() {
 package main
 
 import (
-  "log"
-
-  "github.com/laMetricNotification"
+    "log"
+    "github.com/laMetricNotification"
 )
 
 func main() {
-  var message2 lametricnotification.Notification
-	
-  message2.Priority = "info"
-	message2.IconType = "none"
-	message2.Model.Cycles = 1
-	message2.Model.Frames = make([]lametricnotification.NotificationFrame, 1)
-	message2.Model.Frames[0].Icon = "i120"
-	message2.Model.Frames[0].Text = "Hello World"
-	message2.Model.Sound.Category = "notifications"
-	message2.Model.Sound.ID = "car"
-	message2.Model.Sound.Repeat = 2
+    var message lametricnotification.Notification
+	message.Priority = "info"
+	message.IconType = "none"
+	message.Model.Cycles = 1
+	message.Model.Frames = make([]lametricnotification.NotificationFrame, 1)
+	message.Model.Frames[0].Icon = "i120"
+	message.Model.Frames[0].Text = "Hello World"
+	message.Model.Sound.Category = "notifications"
+	message.Model.Sound.ID = "car"
+	message.Model.Sound.Repeat = 2
+    
+   apikey := "YOUR_DEVICE_API_KEY"
+   ip := "192.168.1.05"
 
-  apikey := "YOUR_DEVICE_API_KEY"
-  ip := "192.168.1.05"
-
-  if err := lametricnotification.PushNotification(apikey, ip, message2); err != nil {
+  if err := lametricnotification.PushNotification(apikey, ip, message); err != nil {
      log.Println("Error sending Notification:", err)
   }
 }
