@@ -8,38 +8,37 @@ The list of notifications, alarms and icons are at developer site.
 
 Usage:
 
-EXAMPLE 1:
+## EXAMPLE 1:
 
 package main
 
 import (
-	"log"
-
-	"github.com/laMetricNotification"
+  "log"
+  "github.com/laMetricNotification"
 )
 
 func main() {
-	apikey := "YOUR_DEVICE_API_KEY"
-	ip := "192.168.1.05"
+  apikey := "YOUR_DEVICE_API_KEY"
+  ip := "192.168.1.05"
   myMessage := "Hello World"
   
-	if err := lametricnotification.SendSimpleNotification(apikey, ip, myMessage); err != nil {
+  if err := lametricnotification.SendSimpleNotification(apikey, ip, myMessage); err != nil {
 		log.Println("Error sending Notification:", err)
-	}
+  }
 }
   
-EXAMPLE 2:
+## EXAMPLE 2:
 
 package main
 
 import (
-	"log"
+  "log"
 
-	"github.com/laMetricNotification"
+  "github.com/laMetricNotification"
 )
 
 func main() {
-	var message2 lametricnotification.Notification
+  var message2 lametricnotification.Notification
 	
   message2.Priority = "info"
 	message2.IconType = "none"
@@ -51,12 +50,12 @@ func main() {
 	message2.Model.Sound.ID = "car"
 	message2.Model.Sound.Repeat = 2
 
-	apikey := "YOUR_DEVICE_API_KEY"
-	ip := "192.168.1.05"
+  apikey := "YOUR_DEVICE_API_KEY"
+  ip := "192.168.1.05"
 
-	if err := lametricnotification.PushNotification(apikey, ip, message2); err != nil {
-		log.Println("Error sending Notification:", err)
-	}
+  if err := lametricnotification.PushNotification(apikey, ip, message2); err != nil {
+     log.Println("Error sending Notification:", err)
+  }
 }
 
 
