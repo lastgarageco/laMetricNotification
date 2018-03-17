@@ -12,6 +12,7 @@ import (
 type NotificationSound struct {
 	Category string `json:"category"`
 	ID       string `json:"id"`
+	Repeat   int    `json:"repeat"`
 }
 
 // NotificationFrame holds the frame for the notification
@@ -52,7 +53,8 @@ func SendSimpleNotification(apikey string, ip string, message string) error {
 			},
 			Sound: NotificationSound{
 				Category: "notifications",
-				ID:       "cat"},
+				ID:       "letter_email",
+				Repeat:   1},
 		},
 	}
 
