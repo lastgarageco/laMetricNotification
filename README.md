@@ -9,7 +9,7 @@ The list of notifications, alarms and icons are at developer site.
 Usage:
 
 ## EXAMPLE 1:
-```
+```Go
 package main
 
 import (
@@ -27,7 +27,7 @@ func main() {
 }
 ```  
 ## EXAMPLE 2:
-```
+```Go
 package main
 
 import (
