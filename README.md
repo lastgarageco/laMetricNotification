@@ -9,7 +9,7 @@ The list of notifications, alarms and icons are at developer site.
 Usage:
 
 ## EXAMPLE 1:
-
+```
 package main
 
 import (
@@ -25,9 +25,9 @@ func main() {
 		log.Println("Error sending Notification:", err)
   }
 }
-  
+```  
 ## EXAMPLE 2:
-
+```
 package main
 
 import (
@@ -54,7 +54,7 @@ func main() {
      log.Println("Error sending Notification:", err)
   }
 }
-
+```
 
 
 
