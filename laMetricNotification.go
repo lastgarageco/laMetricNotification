@@ -1,3 +1,6 @@
+// Package lametricnotification implements simple functions
+// to push notifications on your local network to your
+// LaMetric device
 package lametricnotification
 
 import (
@@ -36,7 +39,7 @@ type Notification struct {
 	Model    NotificationModel `json:"model"`
 }
 
-// SendSimpleNotification sends a simple notificatio to your laMetric
+// SendSimpleNotification sends a simple notification to your laMetric
 func SendSimpleNotification(apikey string, ip string, message string) error {
 	if apikey == "" || ip == "" {
 		return errors.New("Api Key or Device IP can't be empty")
